@@ -1,0 +1,91 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  style.
+    *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /* background-color: black; */
+    }
+    #clockcontainer div{
+    transition: 0.1s;
+    }
+    #clockcontainer{
+    position: relative;
+    border: 18px ;
+    border-style: solid;
+    border-image:linear-gradient(
+    to left, #743ad5, #d53a9d
+    ) ;
+    display: flex;
+    //- background: url(/views/Analogue_clock_face.svg.png) no-repeat;
+    background-color :"pink"
+    background-size: 100%;
+    height: 40vw;
+    width: 40vw;
+    border-radius: 50%;
+    margin: auto;
+    filter: invert(6);
+    }
+    #hour{
+    position: absolute;
+    top:29.5%;
+    border-color: linear;
+    border-radius: 20px;
+    height: 20%;
+    width: 2%;
+    left: 49.2%;
+    /* display: none; */
+    background-color: rgb(0, 255, 13);
+    transform-origin: bottom;
+    }
+    #minute{
+    position: absolute;
+    top: 24.5%;
+    border-radius: 20px;
+    height: 25%;
+    width: 2%;
+    left: 49.2%;
+    opacity: 0.8;
+    background-color: #f8f005;
+    transform-origin: bottom;
+    /* display: none; */
+    }
+    #Second{
+    position: absolute;
+    top: 17.3%;
+    border-radius: 20px;
+    height: 32%;
+    width: 2%;
+    left: 48.85%;
+    /* display: none; */
+    background-color: rgb(234, 24, 24);
+    transform-origin: bottom;
+    }
+  script.
+    function setTime() {
+    let hour=document.querySelector("#hour")
+    let minute=document.querySelector("#minute")
+    let second=document.querySelector("#Second")
+    let D = new Date();
+    let h=D.getHours();
+    let m=D.getMinutes();
+    let s=D.getSeconds();
+    hourRotate=30*h + m/2;
+    minutRotate= 6 * m;
+    secRotate=  6 * s ;
+    hour.style.transform=`rotate(${hourRotate}deg)`
+    minute.style.transform=`rotate(${minutRotate}deg)`
+    second.style.transform=`rotate(${secRotate}deg)`
+    }
+    setInterval(setTime,1000) ;
+#clockcontainer
+  #hour
+  #minute
+  #Second
+
+

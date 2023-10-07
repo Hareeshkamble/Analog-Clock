@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="whats yur Name ?" id="input">
+<button id="btn">clickkk</button>
+<div id="text"></div>
+</body>
+<script>
+let input=document.querySelector("#input")
+let btn=document.querySelector("#btn")
+
+btn.addEventListener("click",msg)
+function msg(){
+    input=document.querySelector("#input")
+    btn=document.querySelector("#btn")
+    if(input.value==""){
+        alert("chalaaa ja boss")
+    }
+    else{
+        console.log("accha hua tumne naam enter kiya")
+    }
+
+}
+</script>
+</html>
